@@ -1,5 +1,5 @@
 import { Botao } from '../../../components'  
-import style from './styleitens.module.css'
+import style from './styleItens.module.css'
 
 const Item = (props) => {
   const { nomeTarefa } = props
