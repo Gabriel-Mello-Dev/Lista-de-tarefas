@@ -1,22 +1,19 @@
 import { useState } from 'react';
 import { Text, Botao } from '../../components';
 import style from './formStyle.module.css';
-
-const Form = ({ setTarefas }) => {
+import {useAppContext} from '../../hooks'
+const Form = () => {
   const [nome, setNome] = useState("");
+const {setTarefas}= useAppContext();
 
-  const adicionarTarefa = (event) => {
+const {adicionarTarefa} =useAppContext();
+
+  const submeterFormulario = (event) => {
     event.preventDefault();
 
-    if (!nome.trim()) return;
+    if (!nome.trim()) {return};
 
-    setTarefas((estadoAtual) => {
-      const novaTarefa = {
-        id: estadoAtual.length + 1,
-        nome: nome,
-      };
-      return [...estadoAtual, novaTarefa];
-    });
+    adicionarTarefa(nome)
 
     setNome("");
   };
@@ -28,9 +25,9 @@ const Form = ({ setTarefas }) => {
   
   return (
     <div>
-      <form className={style.forms} onSubmit={adicionarTarefa}>
+      <form className={style.forms} onSubmit={submeterFormulario}>
         <Text value={nome} onChange={handleChange} />
-        <Botao texto="+" onClick={adicionarTarefa}/>
+        <Botao texto="+" onClick={submeterFormulario}/>
       </form>
     </div>
   );
