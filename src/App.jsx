@@ -2,7 +2,7 @@ import { Cabecalho, Conteudo, Rodape, Form, Lista} from './components';
 import {Inicial} from './pages'
 import './App.css';
 import { BrowserRouter } from 'react-router-dom';
-import { Router } from './router'; 
+import { Router } from './Routers';
 
 
 function App() {
