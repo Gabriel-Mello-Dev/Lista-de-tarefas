@@ -1,0 +1,7 @@
+export * from './cabecalho'
+export * from './conteudo'
+export * from './rodape'
+export * from './FormTarefa'
+export * from './Text'
+export * from './botao'
+export * from './lista'
