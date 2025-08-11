@@ -30,10 +30,28 @@ const adicionarTarefa= (nome)=>{
     });
   }
 
+
+  const editarTarefa = (id, nomeTarefa)=>{
+
+setTarefas(estadoAtual =>{
+   const tarefasAtualizadas= estadoAtual.map(tarefa=>{
+
+        return tarefa.id== id ? {
+            ...tarefa,
+            nome: nomeTarefa
+        }: tarefa
+    } )
+
+return [
+    ...tarefasAtualizadas,
+];
+})
+
+  }
 const [criador,setCriador]= useState("Gabriel Mello")
 
 return (
-    <AppContext.Provider value={{criador, tarefas, adicionarTarefa, removerTarefa}}>
+    <AppContext.Provider value={{criador, tarefas, adicionarTarefa, removerTarefa, editarTarefa}}>
         {children}
     </AppContext.Provider>
 );
