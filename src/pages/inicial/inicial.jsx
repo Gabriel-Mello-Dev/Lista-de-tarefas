@@ -1,7 +1,9 @@
-import { Cabecalho, Conteudo, Rodape, Form, Lista } from '../../components';
+import { Cabecalho, Conteudo, Rodape, Form, Lista,  Loading } from '../../components';
 import { Outlet } from 'react-router-dom';
 import {useState } from 'react'
 import { useAppContext } from '../../hooks';
+
+
 const Inicial = () => {
 
 const {tarfeas}= useAppContext()
@@ -10,8 +12,10 @@ const {tarfeas}= useAppContext()
  
     return (
     <div>
-      <Form/>
+      <Form/> 
       <Lista/>
+
+
     </div>
   );
 };

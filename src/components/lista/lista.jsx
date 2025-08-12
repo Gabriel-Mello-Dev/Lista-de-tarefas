@@ -1,16 +1,21 @@
 import style from './listaStyle.module.css'
 import {Item} from './itens'
 import { useAppContext } from '../../hooks'
-
+import {Loading} from '../../components'
 const Lista =()=>{
 
-const {tarefas}= useAppContext();
+const {tarefas, loadingCarregar}= useAppContext();
 
     return(
 
 <ul className={style.lista}>
+{loadingCarregar && (
 
-{!tarefas.length && (
+<p>Carregando.... <Loading/></p>
+
+)}
+
+{!loadingCarregar && !tarefas.length && (
 
    
     <h2> 

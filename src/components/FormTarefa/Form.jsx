@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import { Text, Botao } from '../../components';
+import { Text, Botao, Loading } from '../../components';
 import style from './formStyle.module.css';
 import {useAppContext} from '../../hooks'
 const Form = () => {
   const [nome, setNome] = useState("");
 const {setTarefas}= useAppContext();
 
-const {adicionarTarefa} =useAppContext();
+const {adicionarTarefa, LoadingCriar} =useAppContext();
 
   const submeterFormulario = (event) => {
     event.preventDefault();
@@ -27,7 +27,8 @@ const {adicionarTarefa} =useAppContext();
     <div>
       <form className={style.forms} onSubmit={submeterFormulario}>
         <Text value={nome} onChange={handleChange} />
-        <Botao texto="+" onClick={submeterFormulario}/>
+
+        <Botao texto={LoadingCriar ? <Loading/> : "+"} onClick={submeterFormulario}/>
       </form>
     </div>
   );
