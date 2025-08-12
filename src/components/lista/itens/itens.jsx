@@ -8,7 +8,13 @@ const Item = (props) => {
 const { removerTarefa, editarTarefa}= useAppContext();
 
 const [editando, setEditando]= useState(false);
+const onBlurTarefa = (event) =>{
 
+const nomeTarefa= event.currentTarget.value;
+editarTarefa(id, nomeTarefa);
+
+setEditando(false)
+}
   return (
     <li className={style.item}>
      
@@ -16,8 +22,7 @@ const [editando, setEditando]= useState(false);
         <Text 
           type="text" 
           defaultvalue={nomeTarefa} 
-          onChange={(e) =>editarTarefa(id, e.currentTarget.value) } 
-          onBlur= {()=> setEditando(false)}
+          onBlur= {onBlurTarefa}
           autoFocus
         />
       ) : (
