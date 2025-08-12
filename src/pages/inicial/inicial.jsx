@@ -2,7 +2,7 @@ import { Cabecalho, Conteudo, Rodape, Form, Lista,  Loading } from '../../compon
 import { Outlet } from 'react-router-dom';
 import {useState } from 'react'
 import { useAppContext } from '../../hooks';
-import style from './style.module.css'
+import style from '../style.module.css'
 
 const Inicial = () => {
 

@@ -11,7 +11,10 @@ const {adicionarTarefa, LoadingCriar} =useAppContext();
   const submeterFormulario = (event) => {
     event.preventDefault();
 
-    if (!nome.trim()) {return};
+if (!nome.trim()) {
+  Alert.alert("Adicione algo à tarefa");
+  return;
+}
 
     adicionarTarefa(nome)
 
@@ -25,8 +28,9 @@ const {adicionarTarefa, LoadingCriar} =useAppContext();
   
   return (
     <div>
+          <h1 className={style.txt}>Adicione uma <span>Tarefa! </span></h1>
       <form className={style.forms} onSubmit={submeterFormulario}>
-        <Text value={nome} onChange={handleChange} />
+        <Text value={nome} onChange={handleChange} placeHolder="adicine uma tarefa" />
 
         <Botao texto={LoadingCriar ? <Loading/> : "+"} onClick={submeterFormulario}/>
       </form>

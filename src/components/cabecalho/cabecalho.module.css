@@ -1,6 +1,7 @@
 .Cabecalho {
   background-color: #c9c9c9;
   padding: 1rem;
+gap: 1rem;
   width: 100%;
   justify-content: space-between;
   display: flex;
@@ -14,6 +15,10 @@
 
 .Cabecalho span {
   color: #007bff;
+}
+
+.Cabecalho span:focus {
+  color: #004fa3;
 }
 
 .Cabecalho a{

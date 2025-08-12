@@ -33,7 +33,8 @@ const Item = (props) => {
         />
       ) : (
         <span onDoubleClick={iniciarEdicao}>
-          {nomeTarefa}
+          
+          <h3> {nomeTarefa}</h3>
         </span>
       )}
 
