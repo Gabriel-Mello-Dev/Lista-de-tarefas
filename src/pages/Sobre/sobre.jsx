@@ -1,10 +1,13 @@
+
+import style from './style.module.css'
+
 const Sobre=()=>{
 
 
 return(
 
-<div>
-<h1>Sobre nos:nada</h1>
+    <div className={style.container}>
+<h1>Sobre nos: Projeto criado com a trilha Tic de React Basico!</h1>
 
 </div>
     
