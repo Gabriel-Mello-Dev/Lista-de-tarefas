@@ -7,7 +7,7 @@ const Cabecalho = () => {
            
             <h1>
                 <span>Lista </span> 
-                Legal :D
+                de tarefas
             </h1>
             </Link>
 
